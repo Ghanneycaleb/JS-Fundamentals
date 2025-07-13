@@ -1,10 +1,11 @@
-const count = parseInt(process.argv[2], 10);
-let output = '';
+const n = Number(process.argv[2]);
 
-for (let i = 0; i < count; i++) {
-  output += 'C is fun\n';
+if (!Number.isInteger(n) || n <= 0) {
+  console.log('Missing number of occurrences');
+} else {
+  let out = '';
+  for (let i = 0; i < n; i++) {
+    out += 'C is fun\n';
+  }
+  console.log(out.trimEnd());      // only reached when n > 0
 }
-
-console.log(
-  Number.isInteger(count) ? output.trimEnd() : 'Missing number of occurrences'
-);
